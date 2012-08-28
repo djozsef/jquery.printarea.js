@@ -93,7 +93,7 @@
                 })
             .filter(function(){ // this filter contributed by "mindinquiring"
                     var media = $(this).attr("media");
-                    return (media.toLowerCase() == "" || media.toLowerCase() == "print")
+                    return (typeof media == "undefined" || media.toLowerCase() == "" || media.toLowerCase() == "print");
                 })
             .each(function(){
                     head += '<link type="text/css" rel="stylesheet" href="' + $(this).attr("href") + '" >';
